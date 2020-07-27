@@ -1,16 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class LadderController : MonoBehaviour
 {
-    GameObject player;
+    PlayerController playerController;
     bool canClimb = false;
     float speed = 10f;
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+        playerController = FindObjectOfType<PlayerController>();
     }
     private void OnTriggerEnter(Collider otherCollider)
     {
@@ -20,9 +21,13 @@ public class LadderController : MonoBehaviour
             canClimb = true;
         }
     }
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider otherCollider)
     {
-        canClimb = false;
+        if (otherCollider.gameObject.tag == "Player")
+        {
+
+            canClimb = false;
+        }
     }
 
     private void Update()
@@ -31,11 +36,14 @@ public class LadderController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.O))
             {
-                player.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
+                print("You clicked O");
+                //playerController.transform.Translate(Vector3.up * Time.deltaTime * speed);
+                playerController.transform.position += Vector3.up * Time.deltaTime * speed;
             }
+
             if (Input.GetKey(KeyCode.L))
             {
-                player.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
+                playerController.transform.Translate(Vector3.down * Time.deltaTime * speed);
             }
         }
     }
