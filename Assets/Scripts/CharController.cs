@@ -163,20 +163,23 @@ public class CharController : MonoBehaviour
 
     void Climb()
     {
-        Vector3 climbing = new Vector3(0, speed * Time.deltaTime, 0);
         if (ladder.CanClimb())
         {
+            anim.SetBool(WALK_ANIM, false);
+            anim.SetBool(CLIMB_ANIM, true);
+
             if (Input.GetKey(KeyCode.W))
             {
                 gameObject.transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * speed);
-                anim.SetBool(CLIMB_ANIM, true);
-                anim.SetBool(WALK_ANIM, false);
             }
             if (Input.GetKey(KeyCode.S))
             {
                 gameObject.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * speed);
             }
         }
+        // anim.SetBool(CLIMB_ANIM, false);
+
+        //anim.SetBool(WALK_ANIM, true);
         ///wylaczyc animacje climb
     }
 }

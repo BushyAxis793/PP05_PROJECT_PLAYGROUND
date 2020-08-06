@@ -506,6 +506,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1558618680835376560, guid: 46816aeb17ba8cc4e8e73f7bff1a462f,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 15f2b85bf78b53d449ebf06075c43875, type: 3}
     - target: {fileID: 1558618680835376564, guid: 46816aeb17ba8cc4e8e73f7bff1a462f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -561,24 +566,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1558618680835376565, guid: 46816aeb17ba8cc4e8e73f7bff1a462f,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1558618680835376565, guid: 46816aeb17ba8cc4e8e73f7bff1a462f,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 1558618680835376567, guid: 46816aeb17ba8cc4e8e73f7bff1a462f,
         type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1558618680835376567, guid: 46816aeb17ba8cc4e8e73f7bff1a462f,
-        type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
